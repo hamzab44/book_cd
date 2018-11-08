@@ -10,19 +10,19 @@
 
 
 <ion-content padding>
-  <ion-card [ngClass]="{'is-on': cd.isLend, 'is-off': !cd.isLend}">
-    <ion-card-content>{{ cd.name}}</ion-card-content>
+  <ion-card [ngClass]="{'is-on': book.isLend, 'is-off': !book.isLend}">
+    <ion-card-content>{{ book.name}}</ion-card-content>
   </ion-card>
   <ion-grid>
     <ion-row>
       <ion-col col-8>
         <button ion-button full
-                [disabled]="!cd.isLend"
+                [disabled]="!book.isLend"
                 color="danger" (click)="onToggleBook()" >Rendre</button>
       </ion-col>
       <ion-col col-4>
         <button ion-button full
-                [disabled]="cd.isLend"
+                [disabled]="book.isLend"
                 color="secondary" (click)="onToggleBook()">Prêter</button>
       </ion-col>
     </ion-row>

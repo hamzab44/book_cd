@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
+import {Book} from "../../../models/Book";
 import {NavParams, ViewController} from "ionic-angular";
-import {Cd} from "../../../models/Cd";
-import {CdsServices} from "../../../services/cds.services";
+import {BooksServices} from "../../../services/books.services";
 
 @Component({
-  selector: 'page-lendcd',
-  templateUrl: 'lendcd.html',
+  selector: 'page-lendbook',
+  templateUrl: 'lendbook.html',
 })
-export class LendcdPage {
+export class LendbookPage {
 
   index: number;
-  cd: Cd;
+  book: Book;
 
   constructor(public navParams: NavParams,
               public viewCtrl: ViewController,
-              public cdsService: CdsServices) {
+              public booksService: BooksServices) {
   }
 
   ngOnInit() {
     this.index = this.navParams.get('index');
-    this.cd = this.cdsService.cdList[this.index];
+    this.book = this.booksService.bookList[this.index];
 
   }
   dismissModal(){
@@ -27,7 +27,7 @@ export class LendcdPage {
   }
 
   onToggleBook(){
-    this.cd.isLend = !this.cd.isLend;
+    this.book.isLend = !this.book.isLend;
   }
 
 }

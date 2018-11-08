@@ -1,0 +1,7 @@
+{
+  "name": "book_cd",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
